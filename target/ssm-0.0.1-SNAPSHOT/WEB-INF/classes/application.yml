@@ -1,0 +1,83 @@
+
+my:
+  name: dong
+  age: 26
+  from: ningbo
+
+
+server:
+  port: 8060
+
+
+spring:
+  devtools:
+    restart:
+      enabled: true #是否开启开发者工具（true/false）
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: Asia/Shanghai
+  profiles:
+    active: dev
+  thymeleaf:
+    cache: false
+  mvc:
+    view:
+      prefix: /WEB-INF/view/
+      # suffix: .jsp
+
+#mybatis:
+#  type-aliases-package: com.github.dge1992.ssm.domain
+#  mapper-locations: classpath:mappers/*.xml
+#  configuration:
+#    cache-enabled: false
+#    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+
+mybatis-plus:
+  mapper-locations:  classpath:mappers/*.xml
+  typeAliasesPackage: com.github.dge1992.ssm.domain
+  global-config:
+    id-type: 0  #0:数据库ID自增   1:用户输入id  2:全局唯一id(IdWorker)  3:全局唯一ID(uuid)
+    db-column-underline: false
+    refresh-mapper: true
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: true #配置的缓存的全局开关
+    lazyLoadingEnabled: true #延时加载的开关
+    multipleResultSetsEnabled: true
+
+---
+
+spring:
+  profiles: dev
+  datasource:
+        url: jdbc:mysql://127.0.0.1:3306/demo?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true
+        username: root
+        password: 123456
+        filters: log4j,wall,mergeStat
+
+logging:
+  level:
+    root: info
+    com.github.dge1992: debug
+  path: logs/
+  file: dge1992.log
+
+
+---
+
+spring:
+  profiles: pro
+  datasource:
+        url: jdbc:mysql://127.0.0.1:3306/demo?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true
+        username: root
+        password: 123456
+        filters: log4j,wall,mergeStat
+
+logging:
+  level:
+    root: warn
+  path: logs/
+  file: dge1992.log
+
+
+

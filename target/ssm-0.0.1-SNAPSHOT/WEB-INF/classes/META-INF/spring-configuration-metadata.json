@@ -1,0 +1,27 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.github.dge1992.ssm.domain.ConfigBean",
+      "name": "my",
+      "type": "com.github.dge1992.ssm.domain.ConfigBean"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.github.dge1992.ssm.domain.ConfigBean",
+      "name": "my.age",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.github.dge1992.ssm.domain.ConfigBean",
+      "name": "my.from",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.github.dge1992.ssm.domain.ConfigBean",
+      "name": "my.name",
+      "type": "java.lang.String"
+    }
+  ]
+}
